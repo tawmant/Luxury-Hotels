@@ -1,0 +1,169 @@
+.footer {
+	position: relative;
+	background-color: $color-blue;
+	padding: vw(100) 0 vw(65);
+	&::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translate(-50%, -50%);
+		width: 0;
+		height: 0;
+		border-left: vw(160) solid transparent;
+		border-right: vw(160) solid transparent;
+		border-bottom: vw(100) solid $color-blue;
+	}
+	&__row {
+		display: flex;
+		align-items: center;
+	}
+	&-logo {
+		margin-bottom: vw(22);
+		span {
+			display: block;
+			color: $color-white;
+			text-align: center;
+			&:first-child {
+				@include font("Adobe Garamond Pro", 700, vw(25), vw(30));
+				letter-spacing: 0.15em;
+				color: $color-white;
+			}
+			&:last-child {
+				@include font("Adobe Garamond Pro", 700, vw(9), vw(11));
+				letter-spacing: 0.6em;
+				color: $color-white;
+			}
+		}
+	}
+	&__list {
+		padding: 0;
+	}
+	&-list {
+		&__link {
+			@include font("Montserrat", 400, vw(14), vw(17));
+			color: #f7f7f7;
+		}
+	}
+	&-nav {
+		padding-left: vw(100);
+		&__item {
+			margin-bottom: vw(15);
+		}
+		&__link {
+			@include font("Montserrat", 700, vw(16), vw(19.5));
+			color: #f7f7f7;
+		}
+	}
+	.socials-list {
+		padding-left: vw(70);
+		&__item {
+			display: flex;
+			align-items: center;
+			margin-bottom: vw(15);
+			svg {
+				width: vw(20);
+				height: vw(20);
+				margin-right: vw(25);
+			}
+			span {
+				@include font("Montserrat", 700, vw(16), vw(19.5));
+				color: #f7f7f7;
+			}
+		}
+	}
+	.mail {
+		form {
+			padding-top: vw(30);
+			display: flex;
+		}
+		span {
+			@include font("Montserrat", 400, vw(16), vw(19.5));
+			color: #f7f7f7;
+		}
+		input {
+			padding: vw(15) vw(25);
+			border: 2px solid $color-orange;
+			background: $color-blue;
+			color: $color-white;
+			outline: none;
+		}
+		button {
+			cursor: pointer;
+			outline: none;
+			font-weight: 700;
+			color: $color-blue;
+			background-color: $color-orange;
+			border: 2px solid $color-orange;
+			border-bottom-right-radius: vw(7);
+			border-top-right-radius: vw(7);
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.footer {
+		padding: vmin(50) 0 vmin(35);
+		&::before {
+			border-left: vmin(80) solid transparent;
+			border-right: vmin(80) solid transparent;
+			border-bottom: vmin(50) solid $color-blue;
+		}
+		&-logo {
+			margin-bottom: vmin(10);
+			span {
+				&:first-child {
+					@include font("Adobe Garamond Pro", 700, vmin(12), 1);
+				}
+				&:last-child {
+					@include font("Adobe Garamond Pro", 700, vmin(4), 1);
+				}
+			}
+		}
+		&-list {
+			margin-bottom: vmin(10);
+			&__link {
+				@include font("Montserrat", 400, vmin(12), 1);
+			}
+		}
+		&-nav {
+			padding-left: 0;
+			&__item {
+				margin-bottom: vmin(5);
+			}
+			&__link {
+				@include font("Montserrat", 700, vmin(12), 1);
+			}
+		}
+		.socials-list {
+			margin-top: vmin(10);
+			padding-left: 0;
+			&__item {
+				margin-bottom: vmin(5);
+				svg {
+					width: vmin(10);
+					height: vmin(10);
+					margin-right: vmin(10);
+				}
+				span {
+					@include font("Montserrat", 700, vmin(12), 1);
+				}
+			}
+		}
+		.mail {
+			form {
+				padding-top: vmin(15);
+			}
+			span {
+				@include font("Montserrat", 400, vmin(12), 1);
+			}
+			input {
+				padding: vmin(10) vmin(15);
+			}
+			button {
+				border-bottom-right-radius: vmin(5);
+				border-top-right-radius: vmin(5);
+			}
+		}
+	}
+}

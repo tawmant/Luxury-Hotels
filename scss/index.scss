@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import "./fonts/ab";
+@import "./variables";
+@import "./mixins";
+@import "./functions";
+@import "./base";
+
+@import "./components/header";
+@import "./components/hero";
+@import "./components/rooms";
+@import "./components/testimonials";
+@import "./components/footer";
+
+@import "./pages/facilities";
+@import "./pages/rooms";
+@import "./pages/contact";

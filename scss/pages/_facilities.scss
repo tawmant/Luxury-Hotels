@@ -1,0 +1,29 @@
+.facilities {
+	position: relative;
+	z-index: 1;
+	padding: vw(80) 0 vw(110);
+	text-align: center;
+	&__description {
+		@include font("Montserrat", 400, vw(25), vw(30));
+		color: $color-blue;
+		margin: vw(35) 0 vw(80);
+	}
+	&__item {
+		position: relative;
+		margin-bottom: vw(180);
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__info {
+		@include font("Montserrat", 700, vw(48), vw(59));
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		background-color: $color-white;
+		width: vw(685);
+		padding-top: vw(15);
+		color: $color-blue;
+	}
+}

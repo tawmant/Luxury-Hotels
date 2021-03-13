@@ -1,0 +1,131 @@
+.first-section {
+	padding: vw(200) 0 vw(170);
+	text-align: center;
+	background-color: $color-blue;
+	&__title {
+		@include font("Montserrat", 700, vw(80), vw(98));
+		color: $color-white;
+	}
+}
+
+.contact {
+	padding: vw(160) 0 vw(450);
+	color: $color-blue;
+	&__title {
+		@include font("Adobe Garamond Pro", 700, vw(60), vw(72));
+	}
+	&__description {
+		@include font("Montserrat", 400, vw(30), vw(37));
+		margin-top: vw(6);
+	}
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		padding-top: vw(160);
+	}
+	&__address {
+		@include font("Montserrat", 400, vw(40), vw(49));
+	}
+	&__view {
+		@include font("Montserrat", 700, vw(40), vw(49));
+		margin: vw(28) 0 vw(54);
+		display: flex;
+		align-items: center;
+		color: $color-blue;
+		svg {
+			margin-left: vw(30);
+		}
+	}
+	&__phone,
+	&__email {
+		@include font("Montserrat", 400, vw(40), vw(49));
+		display: block;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+	&__input,
+	&__textarea {
+		min-height: vw(78);
+		background: $color-white;
+		border: vw(2) solid rgba(20, 39, 74, 0.5);
+		box-sizing: border-box;
+		width: vw(570);
+		margin-bottom: vw(30);
+		outline: none;
+		resize: none;
+	}
+	&__form p {
+		@include font("Arial", 400, vw(25), vw(29));
+		margin-bottom: vw(8);
+	}
+	&__submit {
+		@include font("Montserrat", 700, vw(25), vw(30));
+		padding: vw(25);
+		color: $color-white;
+		background: $color-orange;
+		border-radius: vw(5);
+		outline: none;
+		border: none;
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.contact {
+		&__title {
+			@include font("Adobe Garamond Pro", 700, vmin(36), 1);
+		}
+		&__description {
+			@include font("Montserrat", 400, vmin(16), 1);
+			margin-top: vmin(6);
+		}
+
+		label,
+		&__input,
+		&__textarea {
+			width: 100%;
+			min-height: vmin(30);
+		}
+
+		&__form p {
+			@include font("Arial", 400, vmin(16), 1);
+			margin-bottom: vmin(8);
+		}
+
+		&__address {
+			@include font("Montserrat", 400, vmin(16), 1);
+		}
+		&__form {
+			align-items: flex-start;
+		}
+		&__view {
+			@include font("Montserrat", 700, vmin(16), 1);
+			margin: vmin(20) 0 vmin(40);
+			svg {
+				margin-left: vmin(10);
+				width: vmin(30);
+			}
+		}
+		&__phone,
+		&__email {
+			@include font("Montserrat", 400, vmin(16), 1);
+		}
+		&__form {
+			padding-top: vmin(20);
+		}
+		&__submit {
+			@include font("Montserrat", 700, vmin(16), 1);
+			padding: vmin(15);
+			border-radius: vmin(5);
+		}
+	}
+	.first-section {
+		padding: vmin(100) 0 vmin(85);
+		&__title {
+			@include font("Montserrat", 700, vmin(40), 1);
+		}
+	}
+}

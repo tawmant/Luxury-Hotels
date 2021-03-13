@@ -1,0 +1,172 @@
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo {
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: vw(45) vw(30);
+        background-color: $color-orange;
+        border-bottom-left-radius: vw(50);
+        border-bottom-right-radius: vw(50);
+    }
+    &__text {
+        &--big {
+            @include font("Adobe Garamond Pro", 700, vw(40), vw(48));
+            letter-spacing: 0.15em;
+            color: $color-blue;
+        }
+        &--small {
+            @include font("Adobe Garamond Pro", 700, vw(15), vw(18));
+            letter-spacing: 0.6em;
+            color: $color-blue;
+        }
+    }
+}
+
+.hero {
+    min-height: 100vh;
+    background: url("../images/herobg.png") no-repeat center;
+    background-size: cover;
+}
+
+.nav {
+    &__list {
+        display: flex;
+    }
+    &__item {
+        margin-left: vw(90);
+    }
+    &__link {
+        @include font("Montserrat", 700, vw(25), vw(30));
+        position: relative;
+        color: $color-white;
+        transition: 0.1s;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: vw(-5);
+            width: 120%;
+            height: vw(2);
+            transform: translateX(-50%) scale(0);
+            background-color: white;
+            transition: 0.3s;
+        }
+        &:hover {
+            &::before {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+    }
+}
+
+.burger-menu {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    right: 5%;
+    top: 5%;
+    width: vmin(60);
+    height: vmin(60);
+    background-color: $color-blue;
+    border-radius: 50%;
+    span {
+        position: relative;
+        display: block;
+        width: 60%;
+        height: vmin(2);
+        background-color: $color-white;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: vmin(2);
+            width: 100%;
+            background-color: inherit;
+            transform: translateY(vmin(-10));
+            transition: 0.3s;
+        }
+        &::after {
+            transform: translateY(vmin(10));
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .burger-menu {
+        display: flex;
+        transition: 0.3s;
+        &.is-active {
+            box-shadow: 0 0 vmin(10) 0 rgba(255, 255, 255, 0.5);
+            span {
+                height: 0;
+                &::before {
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+    .nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: $color-blue;
+        transform: translateX(100%);
+        transition: 0.3s;
+        &.is-active {
+            transform: translateX(0);
+        }
+        &__list {
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        &__item {
+            margin-bottom: vmin(20);
+        }
+        &__link {
+            @include font("Montserrat", 700, vmin(18), 1);
+            &::before {
+                bottom: vmin(-5);
+                height: vmin(2);
+            }
+        }
+    }
+
+    .logo {
+        &__link {
+            padding: vvmin(20) vvmin(15);
+            border-bottom-left-radius: vmin(25);
+            border-bottom-right-radius: vmin(25);
+        }
+        &__text {
+            &--big {
+                @include font("Adobe Garamond Pro", 700, vmin(20), 1);
+            }
+            &--small {
+                @include font("Adobe Garamond Pro", 700, vmin(7), 1);
+            }
+        }
+    }
+}

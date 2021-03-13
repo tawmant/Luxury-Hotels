@@ -1,0 +1,77 @@
+ul, p, h1, h2, h3, h4, h5, h6, body, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+// В будущем измения это под 1920 и 1440
+.container {
+    max-width: vw(1580);
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.title {
+    @include font("Adobe Garamond Pro", 700, vw(60), vw(72));
+    color: $color-blue;
+}
+
+@media screen and (max-width: 576px) {
+    .col-3,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8,
+    .col-9,
+    .col-10,
+    .col-11,
+    .col-12 {
+        width: 100%;
+    }
+    .title {
+        @include font("Adobe Garamond Pro", 700, vmin(30), 1);
+    }
+}

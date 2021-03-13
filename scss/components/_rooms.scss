@@ -1,0 +1,79 @@
+.rooms {
+	&__title {
+		@include font("Montserrat", 400, vw(36), vw(44));
+		text-align: center;
+		color: $color-blue;
+		margin: vw(83) 0 vw(97);
+	}
+	&__column {
+		padding-bottom: vw(65);
+	}
+	&-item {
+		&__title {
+			@include font("Adobe Garamond Pro", 700, vw(60), vw(72));
+			letter-spacing: 0.02em;
+			color: $color-blue;
+			margin-top: vw(100);
+		}
+		&__description {
+			@include font("Montserrat", 400, vw(25), vw(40));
+			color: $color-blue;
+			margin: vw(25) 0 vw(30);
+		}
+		&__link {
+			@include font("Montserrat", 700, vw(20), vw(24));
+			letter-spacing: 0.05em;
+			color: $color-white;
+			background-color: $color-orange;
+			padding: vw(18) vw(60);
+			border-radius: vw(15);
+		}
+	}
+	.col-5 &-item {
+		position: relative;
+		padding-right: vw(116);
+		&::before {
+			content: "";
+			position: absolute;
+			left: vw(-48);
+			top: 0;
+			width: vw(2);
+			height: 100%;
+			background-color: $color-blue;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.rooms {
+		&__title {
+			@include font("Montserrat", 400, vmin(18),1);
+			margin: vmin(40) 0 vmin(45);
+		}
+		&__column {
+			padding-bottom: vmin(30);
+		}
+		&-item {
+			&__title {
+				@include font("Adobe Garamond Pro", 700, vmin(30), 1);
+				margin-top: 0;
+			}
+			&__description {
+				@include font("Montserrat", 400, vmin(14), 1);
+				margin: vmin(10) 0 vmin(15);
+			}
+			&__link {
+				@include font("Montserrat", 700, vmin(10), 1);
+				padding: vmin(10) vmin(30);
+				border-radius: vmin(10);
+			}
+		}
+		.col-5 &-item {
+			padding-right: vmin(58);
+			&::before {
+				left: vmin(-18);
+				width: vmin(2);
+			}
+		}
+	}
+}

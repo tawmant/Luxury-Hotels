@@ -1,0 +1,92 @@
+.testimonials {
+	padding-bottom: vw(109);
+	&__content {
+		max-width: vw(800);
+		margin: auto;
+		text-align: center;
+		color: $color-blue;
+	}
+	&__description {
+		@include font("Montserrat", 400, vw(30), vw(37));
+		margin: vw(25) 0 vw(20);
+	}
+	&__author {
+		@include font("Montserrat", 400, vw(25), vw(30));
+	}
+	.swiper-container {
+		max-width: vw(800);
+	}
+	&__prev,
+	&__next {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: vw(50);
+		height: vw(50);
+		border-radius: vw(10);
+		background-color: $color-orange;
+		cursor: pointer;
+		border: vw(2) solid $color-white;
+		transition: 0.3s;
+		path {
+			transition: 0.3s;
+		}
+		&:hover {
+			background-color: $color-white;
+			border: vw(2) solid $color-orange;
+			path {
+				fill: $color-orange;
+			}
+		}
+	}
+	&__prev {
+		left: 50%;
+		bottom: vw(30);
+		transform: translateX(-110%);
+	}
+	&__next {
+		right: 50%;
+		bottom: vw(30);
+		transform: translateX(110%);
+	}
+	.swiper-container {
+		padding-bottom: vw(100);
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.testimonials {
+		padding-bottom: vmin(50);
+		&__content {
+			max-width: vmin(400);
+		}
+		&__description {
+			@include font("Montserrat", 400, vmin(16), 1);
+			margin: vmin(15) 0 vmin(10);
+		}
+		&__author {
+			@include font("Montserrat", 400, vmin(16), 1);
+		}
+		.swiper-container {
+			padding-bottom: vmin(50);
+			max-width: vmin(300);
+		}
+		&__prev,
+		&__next {
+			width: vmin(25);
+			height: vmin(25);
+			border-radius: vmin(5);
+			border: vmin(2) solid $color-white;
+			&:hover {
+				border: vmin(2) solid $color-orange;
+			}
+		}
+		&__prev {
+			bottom: vmin(15);
+		}
+		&__next {
+			bottom: vmin(15);
+		}
+	}
+}
