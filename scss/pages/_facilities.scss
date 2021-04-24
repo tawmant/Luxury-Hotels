@@ -1,7 +1,6 @@
 .facilities {
 	position: relative;
 	z-index: 1;
-	padding: vw(80) 0 vw(110);
 	text-align: center;
 	&__description {
 		@include font("Montserrat", 400, vw(25), vw(30));
@@ -27,3 +26,29 @@
 		color: $color-blue;
 	}
 }
+
+@media screen and (max-width: 576px) {
+	.facilities {
+	  text-align: center;
+	  &__description {
+		@include font("Montserrat", 400, vmin(13), vmin(15));
+		margin: vmin(35) 0 vmin(80);
+	  }
+	  &__item {
+		margin-bottom: vmin(90);
+		&:last-child {
+		  margin-bottom: 0;
+		}
+	  }
+	  &__info {
+		@include font("Montserrat", 700, vmin(24), vmin(30));
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		background-color: $color-white;
+		width: vmin(342);
+		padding-top: vmin(7);
+		color: $color-blue;
+	  }
+	}
+  }

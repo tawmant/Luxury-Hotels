@@ -1054,7 +1054,6 @@ img {
 .facilities {
   position: relative;
   z-index: 1;
-  padding: 4.16667vw 0 5.72917vw;
   text-align: center;
 }
 
@@ -1092,6 +1091,41 @@ img {
   width: 35.67708vw;
   padding-top: 0.78125vw;
   color: #14274a;
+}
+
+@media screen and (max-width: 576px) {
+  .facilities {
+    text-align: center;
+  }
+  .facilities__description {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.46667vmin;
+    line-height: 4vmin;
+    margin: 9.33333vmin 0 21.33333vmin;
+  }
+  .facilities__item {
+    margin-bottom: 24vmin;
+  }
+  .facilities__item:last-child {
+    margin-bottom: 0;
+  }
+  .facilities__info {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.4vmin;
+    line-height: 8vmin;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: #ffffff;
+    width: 91.2vmin;
+    padding-top: 1.86667vmin;
+    color: #14274a;
+  }
 }
 
 .rooms-page .rooms {
